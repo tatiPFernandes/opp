@@ -9,11 +9,19 @@ class Product{
         let product = this.read();
 
         if(this.validInput(product)){
-            alert('save')
+            //will add the product if the inputs have a values, only then it will be add into the productArray
+            this.add(product)
         };
-        console.log(product)
+        this.tableList();
         
     
+    }
+
+    add(product){
+        //adding the inpust into the productArray
+        this.productArray.push(product);
+        this.id++;
+
     }
 
     read(){
@@ -21,9 +29,22 @@ class Product{
         product.id= this.id
         product.productName= document.getElementById("product").value;            
         product.productPrice= document.getElementById("price").value;
-        return product;
+        return product;        
 
-       
+    }
+
+    tableList(){
+        let tbody = document.getElementById("tbody");
+
+        for(let i = 0; i < this.productArray.length; i++){
+            let tr = tbody.insertRow();
+
+            let td_id = tr.insertCell();
+            let td_product = tr.insertCell();
+            let td_price = tr.insertCell();
+            let td_action = tr.insertCell();
+
+        }
 
     }
 
