@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../Style/style.css">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:wght@700&family=DM+Serif+Display&family=Nunito:wght@400;700&family=Roboto&family=Zen+Kaku+Gothic+Antique:wght@300&display=swap" rel="stylesheet">
+    <title>OOP Project</title>
+</head>
+<body>
+
+    <header>My Store</header>
+
+    <main>
+        <div>
+            <h2>Products</h2>
+            <span>List of products</span>
+        </div>
+        
+        <div class="card">
+            <div class="lineInput">
+                <label>Product</label>
+                <input type="text" id="product" placeholder="Name">
+            </div>
+
+            <div class="lineInput">
+                <label>Price</label>
+                <input type="text" id="price" placeholder="Price">
+            </div>
+            
+            <button onclick="product.save()">Save</button>
+            <button onclick="product.cancel()">Cancel</button>
+                        
+        </div>
+
+        <div class="content">
+            <table border="1">
+                <thead>
+                    <th>ID</th>
+                    <th>Product</th>
+                    <th>Price</th>
+                    <th>Action</th>
+
+                </thead>
+                <tbody id="tbody">
+                   
+                </tbody>
+            </table>
+
+
+        </div>
+        
+        
+        
+    </main>
+        <script src="./script1.js"></script>
+</body>
+</html>
