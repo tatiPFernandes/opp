@@ -13,6 +13,7 @@ class Product{
             this.add(product)
         };
         this.tableList();
+        this.cancel();
         
     
     }
@@ -35,7 +36,10 @@ class Product{
 
     tableList(){
         let tbody = document.getElementById("tbody");
-
+        //avoid data duplication
+        tbody.innerText=""
+        
+        //it dynamically crates table row, cell and insert the data input into the table 
         for(let i = 0; i < this.productArray.length; i++){
             let tr = tbody.insertRow();
 
@@ -44,6 +48,26 @@ class Product{
             let td_price = tr.insertCell();
             let td_action = tr.insertCell();
 
+            td_id.innerText = this.productArray[i].id;
+            td_product.innerText = this.productArray[i].productName;
+            td_price.innerText = this.productArray[i].productPrice;
+            
+            //adding a class to center the id
+            td_id.classList.add("center")
+
+            //adding the edit and delete imgs
+            let imgEdit = document.createElement("img")
+            imgEdit.src= "../img/edit.png"
+
+            td_action.appendChild(imgEdit)
+            //  <td> <img> </td>
+
+            let imgDelete = document.createElement("img")
+            imgDelete.src= "../img/delete.png"
+
+            td_action.appendChild(imgDelete)
+
+            td_action.classList.add("action")
         }
 
     }
@@ -68,9 +92,11 @@ class Product{
         return true;
 
     }
-
+     // clean up the input field after save the product
     cancel(){
-        alert("Cancelled")
+        document.getElementById("product").value = "";
+        document.getElementById("price").value = "";
+
     }
 }
 
