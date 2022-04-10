@@ -77,7 +77,7 @@ justify-content:space-around;
 }
 
 img{
-    
+    cursor: pointer;    
     width: 22px;
 
 }

@@ -28,11 +28,11 @@
 
             <div class="lineInput">
                 <label>Price</label>
-                <input type="text" id="price" placeholder="Price">
+                <input type="number" id="price" placeholder="Price">
             </div>
             
-            <button onclick="product.save()">Save</button>
-            <button onclick="product.cancel()">Cancel</button>
+            <button id="btn-save" onclick="product.save()">Save</button>
+            <button onclick="product.cleanField()">Cancel</button>
                         
         </div>
 
